@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(
@@ -17,14 +17,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController _num1 = TextEditingController();
-  TextEditingController _num2 = TextEditingController();
-  String ans = "";
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-          middle: Text('Group'),
+          middle: Text('App'),
           trailing: CupertinoButton(child: Icon(CupertinoIcons.person, size: 20, color: CupertinoColors.activeBlue,),
               onPressed: (){
 
@@ -60,21 +57,33 @@ class _MyAppState extends State<MyApp> {
           Row(
             children: [
               ClipOval(child: Image.asset('images/sam.jpg', height: 50,)),
+
+              CupertinoPageScaffold(
+                child: Column(
+                  children: [
+                    Column(
+                      children: [
+                        Text('Name: Samuel Miranda'),
+                        Text('Email: sammiranda0004@gmail.com'),
+                        Text('Address: San Joaquin Sta Ana'),
+
+                      ],
+                    ),
+                  ],
+                ),
+
+              ),
+
             ],
           ),
-          Card(
-            child: Column(
-              children: [
-                Text('Name: Samuel Miranda'),
-                Text('Email: samuel@gmail.com'),
-                Text('Address: Sta Ana'),
-              ],
-            ),
-          ),
+
+
     ],
+
       ),
     ),
 
     ));
+
   }
 }
